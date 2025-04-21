@@ -1,19 +1,23 @@
 package minesweeper;
 
 public class Minesweeper {
-    private char[][] minefield;
-    private boolean[][] visibility;
+    // Game board representation
+    private char[][] minefield;     // Stores bomb locations ('*') and empty cells
+    private boolean[][] visibility;  // Tracks which cells are revealed
     private int rows;
     private int cols;
-
+    
     public Minesweeper() {
+        // Default constructor
     }
-
+    
+    // Initializes minefield from string input
     public boolean setMinefield(String s) {
         String[] lines = s.split("\n");
         rows = lines.length;
         cols = lines[0].length();
         
+        // Validate minefield dimensions
         for (String line : lines) {
             if (line.length() != cols || rows > cols) {
                 return false;
@@ -23,12 +27,14 @@ public class Minesweeper {
         minefield = new char[rows][cols];
         visibility = new boolean[rows][cols];
         
+        // Create minefield from input
         for (int i = 0; i < rows; i++) {
             minefield[i] = lines[i].toCharArray();
         }
         return true;
     }
-
+    
+    // Counts total bombs in the field
     public int getNumberOfBombs() {
         if (minefield == null) {
             return -1;
@@ -43,7 +49,8 @@ public class Minesweeper {
         }
         return bombCount;
     }
-
+    
+    // Returns number of bombs adjacent to this cell
     public int getHintAt(int row, int col) {
         if (minefield == null || row < 0 || col < 0 || row >= rows || col >= cols || minefield[row][col] == '*') {
             return -1;
@@ -59,19 +66,22 @@ public class Minesweeper {
         }
         return bombCount;
     }
-
+    
+    // Checks if a cell has been revealed
     public boolean isVisible(int row, int col) {
         if (row < 0 || col < 0 || row >= rows || col >= cols) {
             return false;
         }
         return visibility[row][col];
     }
-
+    
+    // Handles player clicking on a cell
     public boolean clickOn(int row, int col) {
         if (minefield == null || row < 0 || col < 0 || row >= rows || col >= cols) {
             return false;
         }
         if (minefield[row][col] == '*') {
+            // Reveal all bombs when a bomb is clicked
             for (int i = 0; i < rows; i++) {
                 for (int j = 0; j < cols; j++) {
                     if (minefield[i][j] == '*') {
@@ -85,13 +95,14 @@ public class Minesweeper {
             return true;
         }
     }
-
+    
+    // Gets field height
     public int getHeight() {
         return rows;
     }
-
+    
+    // Gets field width
     public int getWidth() {
         return cols;
     }
 }
-
