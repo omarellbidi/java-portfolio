@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package observer;
+
+service SpreadService {
+    rpc RegisterTrustedSource (RegisterRequest) returns (RegisterResponse);
+    rpc SpreadNews (SpreadRequest) returns (SpreadResponse);
+}
+
+service NewsService {
+    rpc RegisterReceiver (ReceiverRequest) returns (stream NewsUpdate);
+}
+
+message RegisterRequest {
+    string source = 1;
+    string pwd = 2;
+}
+
+message RegisterResponse {
+    bool success = 1;
+}
+
+message SpreadRequest {
+    string news = 1;
+    string source = 2;
+    string pwd = 3;
+}
+
+message SpreadResponse {
+    string news = 1;
+}
+
+message ReceiverRequest {
+    string clientId = 1;
+}
+
+message NewsUpdate {
+    string news = 1;
+    string source = 2;
+    string timestamp = 3;
+}
+
