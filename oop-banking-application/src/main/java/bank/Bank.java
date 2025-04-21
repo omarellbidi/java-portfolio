@@ -1,5 +1,3 @@
-// El lbidi Omar , s1081842 
-
 package bank;
 
 import java.util.stream.Collectors;
