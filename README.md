@@ -4,7 +4,8 @@ This repository contains a collection of Java projects that demonstrate various 
 ## Projects
 
 ### [Banking System](./oop-banking-application)
-A comprehensive banking application implementing account management, transactions, and customer tracking using object-oriented programming principles.
+
+A full-featured banking application with secure customer and account management, transaction processing, and database storage. Built with Java code and professional database integration that tracks all financial operations while ensuring data integrity and security.
 
 ### [Minesweeper](./minesweeper-java-implementation)
 Implementation of the classic Minesweeper game featuring efficient algorithms for bomb placement, hint calculation, and game state management.
