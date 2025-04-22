@@ -1,31 +1,45 @@
-This repository contains a collection of Java projects that demonstrate various software engineering principles, design patterns, and technical implementations.
+# Advanced Banking System
 
-## Projects
+## Overview
+This project implements a comprehensive enterprise-grade banking system in Java, showcasing object-oriented programming principles, clean architecture, and database persistence. The system manages different types of accounts (Personal and Corporate), customers, financial transactions, and maintains a complete transaction history.
 
-### [Banking System](./oop-banking-application)
-A comprehensive banking application implementing account management, transactions, and customer tracking using object-oriented programming principles.
+## Features
+- Customer management with unique customer IDs
+- Support for different account types (Personal and Corporate)
+- Secure transaction operations (deposit, withdraw, transfer) with ACID properties
+- Balance management with appropriate validation
+- Financial calculations using BigDecimal for accuracy
+- Persistent data storage with MySQL database
+- Transaction history and account statements
+- Audit logging for security
+- Connection pooling for scalability
 
-### [Minesweeper](./minesweeper-java-implementation)
-Implementation of the classic Minesweeper game featuring efficient algorithms for bomb placement, hint calculation, and game state management.
+## Technical Implementation
+This implementation demonstrates:
+- Clean layered architecture (domain, data access, service layers)
+- Design patterns (DAO, Singleton, Factory)
+- Database integration with JDBC
+- Transaction management and connection pooling
+- Logging with SLF4J and Logback
+- Maven for dependency management and build automation
 
-### [Book Manager (MVC)](./MVC%20Book%20Manager)
-JavaFX application built with Model-View-Controller architecture for managing a collection of books with complete CRUD operations.
+## Key Operations
+- Register and manage customers
+- Create personal and corporate accounts
+- Make deposits and withdrawals with transaction safety
+- Transfer funds between accounts
+- Generate transaction history and account statements
+- Calculate total balances
+- Maintain security audit logs
 
-### [News Broadcasting System (Observer Pattern)](./news-broadcasting%20with%20Observer%20Design%20Pattern)
-Real-time news distribution system implementing the Observer design pattern for decoupled component communication.
-
-### [gRPC News System](./gRPC%20News%20Broadcasting%20System)
-Extended version of the news system with network communication capabilities using gRPC and Protocol Buffers for efficient serialization.
-
-### [Item Management (Composite Pattern)](./Composite%20Pattern%20Item%20Management%20System)
-XML-based item catalog utilizing the Composite design pattern to manage hierarchical product structures and recursive operations.
-
-## Technical Focus
-
-These projects highlight proficiency in:
-- Software architecture principles
-- Design patterns implementation
-- Clean code practices
+## Technologies Used
+- Java
+- MySQL Database
+- JDBC
+- Connection Pooling
+- Maven
+- SLF4J and Logback for logging
+- Object-Oriented Design principles
+- BigDecimal for precise financial calculations
 - Java Collections Framework
-- GUI development with JavaFX
-- Testing methodologies
+
